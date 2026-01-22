@@ -16,14 +16,26 @@ export default function QRScanner() {
         setScanning(true);
         
         await qr.start(
-          { facingMode: "environment" },
-          { fps: 10, qrbox: 250 },
-          async (decodedText) => {
+          { 
+            facingMode: "environment",
+            aspectRatio: { ideal: 1.0 }
+          },
+          { 
+            fps: 10, 
+            qrbox: { width: 300, height: 300 },
+            aspectRatio: 1.0,
+            disableFlip: false,
+            supportedScanTypes: [0, 1] // Supporte tous les types de scan
+          },
+          async (decodedText, decodedResult) => {
             console.log("✅ Code scanné:", decodedText);
             setResult(decodedText);
             setError(null);
 
             try {
+              await qr.stop();
+              setScanning(false);
+
               const res = await fetch("/data.json");
               const json = await res.json();
               
@@ -41,16 +53,14 @@ export default function QRScanner() {
                 setData(null);
                 setError(`Code non trouvé: ${decodedText}`);
               }
-
-              await qr.stop();
-              setScanning(false);
             } catch (err) {
               setError(`Erreur: ${err.message}`);
               console.error("❌ Erreur:", err);
             }
           },
-          (error) => {
-            // Erreur de scan normale
+          (errorMessage) => {
+            // Erreur de scan normale - on ignore silencieusement
+            // Ne pas logger toutes les erreurs pour éviter le spam
           }
         );
         
@@ -58,14 +68,21 @@ export default function QRScanner() {
       } catch (err) {
         setError(`Impossible de démarrer la caméra: ${err.message}`);
         console.error("❌ Erreur caméra:", err);
+        setScanning(false);
       }
     };
 
-    startScanner();
+    // Petit délai pour s'assurer que le DOM est prêt
+    const timer = setTimeout(() => {
+      startScanner();
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
       if (qr) {
-        qr.stop().catch(() => {});
+        qr.stop().then(() => {
+          qr.clear();
+        }).catch(() => {});
       }
     };
   }, []);
