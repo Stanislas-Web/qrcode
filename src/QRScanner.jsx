@@ -15,17 +15,33 @@ export default function QRScanner() {
         qr = new Html5Qrcode("reader");
         setScanning(true);
         
+        // Essayer de trouver la caméra arrière
+        let cameraId = null;
+        try {
+          const devices = await Html5Qrcode.getCameras();
+          if (devices && devices.length > 0) {
+            // Chercher la caméra arrière (environment)
+            const backCamera = devices.find(device => 
+              device.label.toLowerCase().includes('back') || 
+              device.label.toLowerCase().includes('rear') ||
+              device.label.toLowerCase().includes('arrière')
+            );
+            cameraId = backCamera ? backCamera.id : devices[0].id;
+            console.log("📷 Caméra trouvée:", cameraId);
+          }
+        } catch (err) {
+          console.log("⚠️ Impossible de lister les caméras, utilisation de facingMode");
+        }
+        
+        // Utiliser l'ID de caméra si trouvé, sinon utiliser "environment" (string)
+        const cameraConfig = cameraId || "environment";
+        
         await qr.start(
-          { 
-            facingMode: "environment",
-            aspectRatio: { ideal: 1.0 }
-          },
+          cameraConfig,
           { 
             fps: 10, 
-            qrbox: { width: 300, height: 300 },
-            aspectRatio: 1.0,
-            disableFlip: false,
-            supportedScanTypes: [0, 1] // Supporte tous les types de scan
+            qrbox: 250,
+            aspectRatio: 1.0
           },
           async (decodedText, decodedResult) => {
             console.log("✅ Code scanné:", decodedText);
@@ -60,7 +76,6 @@ export default function QRScanner() {
           },
           (errorMessage) => {
             // Erreur de scan normale - on ignore silencieusement
-            // Ne pas logger toutes les erreurs pour éviter le spam
           }
         );
         
