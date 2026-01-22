@@ -40,42 +40,51 @@ export default function QRScanner() {
           cameraConfig,
           { 
             fps: 10, 
-            qrbox: 250,
-            aspectRatio: 1.0
+            qrbox: { width: 250, height: 250 },
+            aspectRatio: 1.0,
+            disableFlip: false
           },
-          async (decodedText, decodedResult) => {
-            console.log("✅ Code scanné:", decodedText);
-            setResult(decodedText);
-            setError(null);
-
-            try {
-              await qr.stop();
+          (decodedText, decodedResult) => {
+            console.log("✅✅✅ CODE SCANNÉ DÉTECTÉ:", decodedText);
+            console.log("Résultat complet:", decodedResult);
+            
+            // Arrêter le scanner immédiatement
+            qr.stop().then(() => {
               setScanning(false);
-
-              const res = await fetch("/data.json");
-              const json = await res.json();
+              setResult(decodedText);
+              setError(null);
               
-              console.log(`📊 ${json.length} éléments chargés`);
-              
-              const found = json.find(item => item.id?.trim() === decodedText.trim());
-              
-              if (found) {
-                console.log("✅ Trouvé:", found);
-                setData(found);
-                setError(null);
-              } else {
-                console.log("❌ Code non trouvé");
-                console.log("Premiers codes:", json.slice(0, 5).map(i => i.id));
-                setData(null);
-                setError(`Code non trouvé: ${decodedText}`);
-              }
-            } catch (err) {
-              setError(`Erreur: ${err.message}`);
-              console.error("❌ Erreur:", err);
-            }
+              // Récupérer les données
+              fetch("/data.json")
+                .then(res => res.json())
+                .then(json => {
+                  console.log(`📊 ${json.length} éléments chargés`);
+                  
+                  const found = json.find(item => item.id?.trim() === decodedText.trim());
+                  
+                  if (found) {
+                    console.log("✅ Trouvé:", found);
+                    setData(found);
+                    setError(null);
+                  } else {
+                    console.log("❌ Code non trouvé");
+                    console.log("Code recherché:", decodedText);
+                    console.log("Premiers codes:", json.slice(0, 5).map(i => i.id));
+                    setData(null);
+                    setError(`Code non trouvé: ${decodedText}`);
+                  }
+                })
+                .catch(err => {
+                  setError(`Erreur: ${err.message}`);
+                  console.error("❌ Erreur:", err);
+                });
+            }).catch(err => {
+              console.error("Erreur arrêt scanner:", err);
+            });
           },
           (errorMessage) => {
-            // Erreur de scan normale - on ignore silencieusement
+            // Ne pas logger toutes les erreurs pour éviter le spam
+            // Le scanner continue à essayer
           }
         );
         
