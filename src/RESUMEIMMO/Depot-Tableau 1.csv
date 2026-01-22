@@ -1,0 +1,24 @@
+;Désignation;Compte;Rubrique;Emplacement;Colonne1;Code d'idenification;FOURNISSEUR;Date d'achat;Mis en service;Fin amort.;Durée;Cout d'acquisition en USD ;Taux USD / CDF ;Taux d'amortissement ;Cout d'acquisition en CDF ;mois;prorata;Amortissement 2023;Cumul Amort 2023;VNC 2023;Amortissement 2024;Cumul Amort 2024;VNC 2024;Coéfficient de Révaluation;VBR;CV;AR;CA;SA;ER
+1;Cric Roulant 10T;241200;Outillages Industriel;DEPOT;3500;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	9 905 000,00 FC ;8;5;;;; 	336 458,33 FC ;336 458,33;2086041,66666667;1,03;2 495 175,00; 	72 675,00 FC ; 	346 552,08 FC ; 	10 093,75 FC ;0; 	62 581,25 FC 
+2;Cric Roulant 10T;241200;Outillages Industriel;DEPOT;3500;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	9 905 000,00 FC ;8;5;;;; 	336 458,33 FC ;336 458,33;2086041,66666667;1,03;2 495 175,00; 	72 675,00 FC ; 	346 552,08 FC ; 	10 093,75 FC ;0; 	62 581,25 FC 
+3;Cric HYDROLIQUE;241200;Outillages Industriel;DEPOT;435;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	1 231 050,00 FC ;;;;;;;;;;;;;;;
+4;Cric HYDROLIQUE 10T/AMT;241200;Outillages Industriel;DEPOT;1200;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	3 396 000,00 FC ;8;5;;;; 	336 458,33 FC ;336 458,33;2086041,66666667;1,03;2 495 175,00; 	72 675,00 FC ; 	346 552,08 FC ; 	10 093,75 FC ;0; 	62 581,25 FC 
+5;Grue Moteur;241200;Outillages Industriel;DEPOT;950;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	2 688 500,00 FC ;8;5;;;; 	336 458,33 FC ;336 458,33;2086041,66666667;1,03;2 495 175,00; 	72 675,00 FC ; 	346 552,08 FC ; 	10 093,75 FC ;0; 	62 581,25 FC 
+6;Grue Moteur;241200;Outillages Industriel;DEPOT;950;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	2 688 500,00 FC ;;;;;;;;;;;;;;;
+7;Treteaux Paire 6T;241200;Outillages Industriel;DEPOT;341;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	965 030,00 FC ;;;;;;;;;;;;;;;
+8;Treteaux Paire 6T;241200;Outillages Industriel;DEPOT;341;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	965 030,00 FC ;;;;;;;;;;;;;;;
+9;Treteaux Paire 6T;241200;Outillages Industriel;DEPOT;341;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	965 030,00 FC ;;;;;;;;;;;;;;;
+10;Treteaux Paire 6T;241200;Outillages Industriel;DEPOT;341;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	965 030,00 FC ;8;5;;;; 	33 055,56 FC ;33 055,56;204944,444444444;1,03;245 140,00; 	7 140,00 FC ; 	34 047,22 FC ; 	991,67 FC ;0; 	6 148,33 FC 
+11;Treteaux 3T AM 4300 2C;241200;Outillages Industriel;DEPOT;420;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	1 188 600,00 FC ;8;5;;;; 	33 055,56 FC ;33 055,56;204944,444444444;1,03;245 140,00; 	7 140,00 FC ; 	34 047,22 FC ; 	991,67 FC ;0; 	6 148,33 FC 
+12;Treteaux 3T AM 4300 2C;241200;Outillages Industriel;DEPOT;420;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	1 188 600,00 FC ;8;5;;;; 	52 500,00 FC ;52 500,00;;1,03;389 340,00; 	11 340,00 FC ; 	54 075,00 FC ; 	1 575,00 FC ;; 	9 765,00 FC 
+13;Treteaux 3T AM 4300 2C;241200;Outillages Industriel;DEPOT;420;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	1 188 600,00 FC ;11;2;;;; 	58 480,56 FC ;58 480,56;;1,03;1 084 229,50; 	31 579,50 FC ; 	60 234,97 FC ; 	1 754,42 FC ;; 	29 825,08 FC 
+14;Treteaux 3T AM 4300 2C;241200;Outillages Industriel;DEPOT;420;;OTRAS SARL;20/03/2025;28/03/2025;28/03/2030;5,00;;2830,00;; 	1 188 600,00 FC ;4;9;;;; 	89 375,00 FC ;89 375,00;;1,03;386 100,00; 	28 600,00 FC ; 	96 525,00 FC ; 	7 150,00 FC ;; 	21 450,00 FC 
+15;Poste a souder ;241200;Outillages Industriel;DEPOT;370;;Maison froid Congo;6/27/25;6/27/25;6/27/30;5,00;;2870,00;; 	1 061 900,00 FC ;8;5;;;; 	33 055,56 FC ;33 055,56;;1,03;245 140,00; 	7 140,00 FC ; 	34 047,22 FC ; 	991,67 FC ;; 	6 148,33 FC 
+16;Meuleuses Electriques ;241200;Outillages Industriel;DEPOT;;;Quincaillerie JEANCY;8/27/25;8/27/25;;5,00;;2870,00;; 	435 000,00 FC ;4;9;;;;;;;;;;;;;
+17;lit roulettes ;241100;MATERIEL INDUSTRIEL;DEPOT;350;;BENEDICTION DE LETERNEL;;8/15/25;;5,00;;2850,00;; 	997 500,00 FC ;;;;;;;;;;;;;;;
+18;lit roulettes ;241100;MATERIEL INDUSTRIEL;DEPOT;350;;BENEDICTION DE LETERNEL;;8/15/25;;5,00;;2850,00;; 	997 500,00 FC ;;;;;;;;;;;;;;;
+19;Karsher a essences ;241200;Outillages Industriel;DEPOT;;;Quincaillerie Josmat;4/07/2025;;;;;;; 	1 282 500,00 FC ;;;;;;;;;;;;;;;
+20;Karsher a essences ;241200;Outillages Industriel;DEPOT;;;Quincaillerie Josmat;4/07/2025;;;;;;; 	1 282 500,00 FC ;;;;;;;;;;;;;;;
+21;Karsher electroniques ;241200;Outillages Industriel;DEPOT;;;Quincaillerie Josmat;4/07/2025;;;;;;; 	1 282 500,00 FC ;;;;;;;;;;;;;;;
+22;compresseur;241100;;DEPOT;;;;;;;;;;;;;;;;;;;;;;;;;;
+23;compresseur;241100;;DEPOT;;;;;;;;;;;;;;;;;;;;;;;;;;
